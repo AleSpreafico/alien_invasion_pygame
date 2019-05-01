@@ -1,6 +1,7 @@
 import sys
 
 import pygame
+import helpers as h
 
 from settings import Settings
 from ship import Ship
@@ -21,15 +22,8 @@ def run_game():
     """ Start Game """
     while True:
         """ listening mouse and key events """
-        for event in pygame.event.get():
-
-            if event.type == pygame.QUIT:
-                sys.exit()
-
-        screen.fill(init_settings.bg_color)
-        ship.blitme()
-
-        pygame.display.flip()
+        h.check_events()
+        h.update_screen(init_settings, screen, ship)
 
 
 run_game()
