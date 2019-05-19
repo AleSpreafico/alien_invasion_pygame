@@ -23,6 +23,7 @@ def run_game():
     while True:
         """ listening mouse and key events """
         h.check_events(ship)
+        ship.update()
         h.update_screen(init_settings, screen, ship)
 
 
