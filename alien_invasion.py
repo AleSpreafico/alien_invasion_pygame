@@ -27,7 +27,7 @@ def run_game():
         """ listening mouse and key events """
         h.check_events(init_settings, screen, ship, bullets)
         ship.update()
-        bullets.update()
+        h.update_bullets(bullets)
         h.update_screen(init_settings, screen, ship, bullets)
 
 
