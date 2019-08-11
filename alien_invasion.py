@@ -1,6 +1,7 @@
 import sys
 
 import pygame
+from pygame.sprite import Group
 import helpers as h
 
 from settings import Settings
@@ -17,14 +18,17 @@ def run_game():
     )
     pygame.display.set_caption("Alien Invasion")
 
-    ship = Ship(screen)
+    ship = Ship(init_settings, screen)
+
+    bullets = Group()
 
     """ Start Game """
     while True:
         """ listening mouse and key events """
-        h.check_events(ship)
+        h.check_events(init_settings, screen, ship, bullets)
         ship.update()
-        h.update_screen(init_settings, screen, ship)
+        bullets.update()
+        h.update_screen(init_settings, screen, ship, bullets)
 
 
 run_game()
