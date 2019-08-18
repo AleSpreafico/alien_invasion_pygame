@@ -43,6 +43,7 @@ def update_screen(settings, screen, ship, bullets):
 
     pygame.display.flip()
 
+
 def update_bullets(bullets):
     bullets.update()
 
@@ -50,6 +51,7 @@ def update_bullets(bullets):
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
     # print(len(bullets))
+
 
 def fire_bullet(settings, screen, ship, bullets):
     if len(bullets) < settings.bullets_allowed:
